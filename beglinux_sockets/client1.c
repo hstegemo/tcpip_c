@@ -29,4 +29,11 @@ int main()
 		perror("oops: client1");
 		exit(1);
 	}
+
+	// You can now read and write via sockfd
+	write(sockfd, &ch, 1);
+	read(sockfd, &ch, 1);
+	printf("char from server = %c\n", ch);
+	close(sockfd);
+	exit(0);
 }
